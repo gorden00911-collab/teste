@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Catálogo de araras, expositores, ganchos e acessórios para lojas. Studio Expositores - Exibir bem, vender mais.">
+  <title>Catálogo | Studio Expositores</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topline">
+    <span>STUDIO EXPOSITORES</span>
+    <span>EXIBIR BEM, VENDER MAIS</span>
+  </div>
+
+  <header class="header">
+    <a class="brand" href="#" aria-label="Studio Expositores - início">
+      <img src="logo.jpeg" alt="Logo Studio Expositores" class="brand-logo">
+      <div class="brand-text">
+        <strong>STUDIO</strong>
+        <small>EXPOSITORES</small>
+      </div>
+    </a>
+    <nav>
+      <a href="#catalogo">Produtos</a>
+      <a href="#sobre">Sobre nós</a>
+      <a class="nav-cta" href="#contato">Solicitar orçamento <span>↗</span></a>
+    </nav>
+    <button class="menu-btn" aria-label="Abrir menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> CATÁLOGO DE PRODUTOS</div>
+        <h1>Exibir bem.<br><em>Vender mais.</em></h1>
+        <p>Soluções sofisticadas em expositores, araras e acessórios para transformar o visual da sua loja e encantar os seus clientes.</p>
+        <a class="primary-btn" href="#catalogo">Explorar catálogo <span>↓</span></a>
+        <div class="hero-meta">
+          <div><strong>56</strong><span>produtos disponíveis</span></div>
+          <i></i>
+          <div><strong>100%</strong><span>qualidade e acabamento</span></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="art-circle circle-one"></div>
+        <div class="art-circle circle-two"></div>
+        <div class="hero-card">
+          <img src="logo.jpeg" alt="Studio Expositores" class="hero-logo-img">
+        </div>
+        <div class="floating-note">
+          <span>✦</span>
+          <div>
+            <b>Design & Elegância</b>
+            <small>Para o seu negócio</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog-section" id="catalogo">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">ENCONTRE O QUE PRECISA</div>
+          <h2>Nosso Catálogo<span>.</span></h2>
+          <p>Explore as nossas linhas de produtos e entre em contacto para consultar preços e especificações.</p>
+        </div>
+        <div class="count-pill"><span id="resultCount">56</span> produtos</div>
+      </div>
+
+      <div class="toolbar">
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Buscar produto por nome..." aria-label="Buscar produto">
+        </label>
+        <div class="filters" id="filters">
+          <button class="filter active" data-category="Todos">Todos</button>
+          <button class="filter" data-category="Araras">Araras</button>
+          <button class="filter" data-category="Expositores">Expositores</button>
+          <button class="filter" data-category="Ganchos e suportes">Ganchos e suportes</button>
+          <button class="filter" data-category="Cabides e bustos">Cabides e bustos</button>
+          <button class="filter" data-category="Bonés">Bonés</button>
+          <button class="filter" data-category="Outros">Outros</button>
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <span>⌕</span>
+        <h3>Nenhum produto encontrado</h3>
+        <p>Tente procurar por outro termo ou selecione uma categoria diferente.</p>
+        <button id="clearFilters">Limpar filtros</button>
+      </div>
+    </section>
+
+    <section class="contact-banner" id="contato">
+      <div class="banner-icon">↗</div>
+      <div>
+        <div class="eyebrow">ATENDIMENTO EXCLUSIVO</div>
+        <h2>Gostou de algum modelo?</h2>
+        <p>Entre em contacto diretamente connosco para consultar valores, prazos e opções personalizadas.</p>
+      </div>
+      <a class="banner-btn" id="whatsLink" href="https://wa.me/5511999999999" target="_blank" rel="noopener">Solicitar Orçamento <span>↗</span></a>
+    </section>
+
+    <section class="about" id="sobre">
+      <img src="logo.jpeg" alt="Studio Expositores Logo" class="about-logo">
+      <div>
+        <h3>Studio Expositores</h3>
+        <p>Desenvolvemos soluções de alta qualidade para organização e exposição no retalho. O nosso compromisso é oferecer produtos duráveis, elegantes e funcionais para valorizar cada detalhe do seu ambiente de loja.</p>
+      </div>
+      <div class="about-side">
+        CATÁLOGO OFICIAL<br>
+        <b>2026</b>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> Studio Expositores. Todos os direitos reservados.</span>
+    <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">Voltar ao topo ↑</a>
+  </footer>
+
+  <script>
+    const products = [
+      { nome: 'Arara desfile industrial com 1,70 de altura', imagem: 'images/produto-01.jpg', categoria: 'Araras' },
+      { nome: 'Arara desfile oval', imagem: 'images/produto-02.jpg', categoria: 'Araras' },
+      { nome: 'Arara desfile Retrô', imagem: 'images/produto-03.jpg', categoria: 'Araras' },
+      { nome: 'Arara Desfile simples com 2 níveis', imagem: 'images/produto-04.jpg', categoria: 'Araras' },
+      { nome: 'Arara Desfile simples', imagem: 'images/produto-05.jpg', categoria: 'Araras' },
+      { nome: 'Arara industrial de parede e cremalheira', imagem: 'images/produto-06.jpg', categoria: 'Araras' },
+      { nome: 'Arara industrial dupla de chão 120 cm', imagem: 'images/produto-07.jpg', categoria: 'Araras' },
+      { nome: 'Arara MD Dupla', imagem: 'images/produto-08.jpg', categoria: 'Araras' },
+      { nome: 'Arara MD simples', imagem: 'images/produto-09.jpg', categoria: 'Araras' },
+      { nome: 'Arara RT cabideiro para painel', imagem: 'images/produto-10.jpg', categoria: 'Araras' },
+      { nome: 'Arara RT cabideiro para Parede', imagem: 'images/produto-11.jpg', categoria: 'Araras' },
+      { nome: 'Arara RT cabideiro para Régua', imagem: 'images/produto-12.jpg', categoria: 'Araras' },
+      { nome: 'Bonde luxo para Painel e Régua', imagem: 'images/produto-13.jpg', categoria: 'Outros' },
+      { nome: 'Boné luxo Balcão com 6', imagem: 'images/produto-14.jpg', categoria: 'Bonés' },
+      { nome: 'Boné luxo Balcão fixo', imagem: 'images/produto-15.jpg', categoria: 'Bonés' },
+      { nome: 'Boné luxo para cremalheira', imagem: 'images/produto-16.jpg', categoria: 'Bonés' },
+      { nome: 'Boné Luxo regulável Para Balcão', imagem: 'images/produto-17.jpg', categoria: 'Bonés' },
+      { nome: 'Boné para painel Simples', imagem: 'images/produto-18.jpg', categoria: 'Bonés' },
+      { nome: 'Busto + pedestal H', imagem: 'images/produto-19.jpg', categoria: 'Cabides e bustos' },
+      { nome: 'Busto + pedestal Retrô', imagem: 'images/produto-20.jpg', categoria: 'Cabides e bustos' },
+      { nome: 'Cabide Silhueta 3D', imagem: 'images/produto-21.jpg', categoria: 'Cabides e bustos' },
+      { nome: 'Cabide silhueta Quadrada', imagem: 'images/produto-22.jpg', categoria: 'Cabides e bustos' },
+      { nome: 'Cabide silhueta V', imagem: 'images/produto-23.jpg', categoria: 'Cabides e bustos' },
+      { nome: 'Expositor cremalheira para bola', imagem: 'images/produto-24.jpg', categoria: 'Expositores' },
+      { nome: 'Expositor de Calçados para PainelParede e Régua', imagem: 'images/produto-25.jpg', categoria: 'Expositores' },
+      { nome: 'Expositor de calçados parede coluna com 2 metros e suporte para 12 calçados', imagem: 'images/produto-26.jpg', categoria: 'Expositores' },
+      { nome: 'Expositor de óculos para painel', imagem: 'images/produto-27.jpg', categoria: 'Expositores' },
+      { nome: 'Expositor Painel para Bola', imagem: 'images/produto-28.jpg', categoria: 'Expositores' },
+      { nome: 'Expositor para bolsa duplo', imagem: 'images/produto-29.jpg', categoria: 'Expositores' },
+      { nome: 'Expositor para bolsa luxo retrô', imagem: 'images/produto-30.jpg', categoria: 'Expositores' },
+      { nome: 'Expositor para bolsa meia lua luxo com base de chapa', imagem: 'images/produto-31.jpg', categoria: 'Expositores' },
+      { nome: 'Expositor para bolsa meia lua', imagem: 'images/produto-32.jpg', categoria: 'Expositores' },
+      { nome: 'Expositor para bolsa simples', imagem: 'images/produto-33.jpg', categoria: 'Expositores' },
+      { nome: 'Expositor para boné luxo de chão H com 12 suportes', imagem: 'images/produto-34.jpg', categoria: 'Expositores' },
+      { nome: 'Expositor para calçados De chão H com 12 suporte para calçados', imagem: 'images/produto-35.jpg', categoria: 'Expositores' },
+      { nome: 'Expositor para calçados para cremalheira', imagem: 'images/produto-36.jpg', categoria: 'Expositores' },
+      { nome: 'Gancho para painel solda mig arame 5,60 mm', imagem: 'images/produto-37.jpg', categoria: 'Ganchos e suportes' },
+      { nome: 'Gancho para Régua solda mig arame de 5,60 mm', imagem: 'images/produto-38.jpg', categoria: 'Ganchos e suportes' },
+      { nome: 'Gancho porta preço para painel', imagem: 'images/produto-39.jpg', categoria: 'Ganchos e suportes' },
+      { nome: 'Gancho provado de 1', imagem: 'images/produto-40.jpg', categoria: 'Ganchos e suportes' },
+      { nome: 'Gancho provador de 2', imagem: 'images/produto-41.jpg', categoria: 'Ganchos e suportes' },
+      { nome: 'Gancho provador de 3', imagem: 'images/produto-42.jpg', categoria: 'Ganchos e suportes' },
+      { nome: 'Gancho provador de 4', imagem: 'images/produto-43.jpg', categoria: 'Ganchos e suportes' },
+      { nome: 'Gancho S', imagem: 'images/produto-44.jpg', categoria: 'Ganchos e suportes' },
+      { nome: 'Mão aramada dupla para painel', imagem: 'images/produto-45.jpg', categoria: 'Ganchos e suportes' },
+      { nome: 'Pedestal H', imagem: 'images/produto-46.jpg', categoria: 'Cabides e bustos' },
+      { nome: 'Pedestal retrô', imagem: 'images/produto-47.jpg', categoria: 'Cabides e bustos' },
+      { nome: 'Porta Boné luxo com 4 para painelparede e régua', imagem: 'images/produto-48.jpg', categoria: 'Bonés' },
+      { nome: 'Porta Look H', imagem: 'images/produto-49.jpg', categoria: 'Cabides e bustos' },
+      { nome: 'Porta look Retrô', imagem: 'images/produto-50.jpg', categoria: 'Cabides e bustos' },
+      { nome: 'Régua cremalheira', imagem: 'images/produto-51.jpg', categoria: 'Ganchos e suportes' },
+      { nome: 'Suporte Para prateleira modelo faca painel com aba', imagem: 'images/produto-52.jpg', categoria: 'Ganchos e suportes' },
+      { nome: 'Suporte Para prateleira modelo faca cremalheira com aba', imagem: 'images/produto-53.jpg', categoria: 'Ganchos e suportes' },
+      { nome: 'Suporte Para prateleira modelo faca cremalheira sem aba', imagem: 'images/produto-54.jpg', categoria: 'Ganchos e suportes' },
+      { nome: 'Suporte Para prateleira modelo faca painel sem aba', imagem: 'images/produto-55.jpg', categoria: 'Ganchos e suportes' },
+      { nome: 'Suporte pedestal H para pescoço', imagem: 'images/produto-56.jpg', categoria: 'Ganchos e suportes' }
+    ];
+
+    const grid = document.getElementById('productGrid');
+    const searchInput = document.getElementById('searchInput');
+    const resultCount = document.getElementById('resultCount');
+    const emptyState = document.getElementById('emptyState');
+    let activeCategory = 'Todos';
+
+    function renderProducts() {
+      const term = searchInput.value.trim().toLocaleLowerCase('pt-BR');
+      const filtered = products.filter(p =>
+        (activeCategory === 'Todos' || p.categoria === activeCategory) &&
+        p.nome.toLocaleLowerCase('pt-BR').includes(term)
+      );
+
+      grid.innerHTML = filtered.map((p) => `
+        <article class="product-card">
+          <div class="product-image">
+            <img src="${p.imagem}" alt="${p.nome}" loading="lazy">
+            <span class="product-tag">${p.categoria}</span>
+            <button class="quick-btn" type="button" aria-label="Consultar ${p.nome}" data-name="${p.nome}">↗</button>
+          </div>
+          <div class="product-info">
+            <div class="product-number">PRODUTO · ${String(products.indexOf(p)+1).padStart(2,'0')}</div>
+            <h3>${p.nome}</h3>
+            <button class="quote-link" type="button" data-name="${p.nome}">Consultar produto <span>↗</span></button>
+          </div>
+        </article>
+      `).join('');
+
+      resultCount.textContent = filtered.length;
+      emptyState.hidden = filtered.length !== 0;
+      grid.hidden = filtered.length === 0;
+    }
+
+    document.getElementById('filters').addEventListener('click', e => {
+      const btn = e.target.closest('[data-category]');
+      if (!btn) return;
+      activeCategory = btn.dataset.category;
+      document.querySelectorAll('.filter').forEach(b => b.classList.toggle('active', b === btn));
+      renderProducts();
+    });
+
+    searchInput.addEventListener('input', renderProducts);
+
+    document.getElementById('clearFilters').addEventListener('click', () => {
+      searchInput.value = '';
+      activeCategory = 'Todos';
+      document.querySelectorAll('.filter').forEach(b => b.classList.toggle('active', b.dataset.category === 'Todos'));
+      renderProducts();
+    });
+
+    document.addEventListener('click', e => {
+      const btn = e.target.closest('[data-name]');
+      if (!btn) return;
+      const name = btn.dataset.name;
+      const message = encodeURIComponent('Olá! Gostaria de consultar preço e detalhes do produto: ' + name + '.');
+      const phone = '5511999999999'; // Substitua pelo seu WhatsApp com DDD (ex: 5511999999999)
+      window.open('https://wa.me/' + phone + '?text=' + message, '_blank', 'noopener');
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    renderProducts();
+  </script>
+</body>
+</html>
